@@ -18,13 +18,19 @@ func score_to_grade (score)
         return bad
 """
 
+import random
+
 
 def main():
+    random_int_score = random.randint(0, 101)
+    random_float_score = random.uniform(0, 100)
     score = float(input("Enter score: "))
-    print("Your score is {}.".format(grade_calc(score)))
+    print("Your score is {}.".format(score_to_grade(score)))
+    print("The random integer score {} is {}".format(random_int_score, score_to_grade(random_int_score)))
+    print("The random floating score {:.2f} is {}".format(random_float_score, score_to_grade(random_float_score)))
 
 
-def grade_calc(numeric_score):
+def score_to_grade(numeric_score):
     if numeric_score < 0 or numeric_score > 100:
         return "invalid"
     elif numeric_score >= 90:
