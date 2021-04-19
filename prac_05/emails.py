@@ -17,9 +17,9 @@ def main():
             # This is my one line solution to processing the name from the email, although I feel its not whats asked
             # name_to_add = email_to_add.split('@')[0].replace('.', ' ').title()
             name_to_add = name_from_email(email_to_add)
-            user_answer = input("Is your name {}?".format(name_to_add))
+            user_name = input("Is your name {}?".format(name_to_add))
             # changes the user's name if the predicted one is wrong
-            if user_answer.lower() not in CONTINUATION_PHRASES:
+            if user_name.lower() not in CONTINUATION_PHRASES:
                 name_to_add = input("Name: ").title()
             email_name_dict[email_to_add] = name_to_add
 
