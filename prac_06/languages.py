@@ -1,3 +1,4 @@
+"""CP1404 Practical 06 - Jacob Finger 2021 - ProgrammingLanguages class test"""
 from programming_language import ProgrammingLanguage
 
 
@@ -6,14 +7,12 @@ def main():
     python = ProgrammingLanguage("Python", "Dynamic", True, 1991)
     visual_basic = ProgrammingLanguage("Visual Basic", "Static", False, 1991)
 
-    language_list = [ruby, python, visual_basic]
+    language_list = [ruby, python, visual_basic]  # Input instances into an iterable list
 
     print("The dynamically typed languages are:")
     for i in language_list:
-        if i.is_dynamic():
+        if i.is_dynamic():  # Demonstrates functionality of the is_dynamic() method
             print(i.name)
 
 
 main()
-
-
