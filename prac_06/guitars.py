@@ -12,6 +12,9 @@ def main():
 
     name = input("Name: ")
     while name != '':
+        """Creates a Guitar instance based on given name,
+        year and cost and appends it to the list of guitars.
+        Runs until no guitar name is input"""
         year = int(input("Year: "))
         cost = float(input("Cost: "))
         guitars.append(Guitar(name, year, cost))
@@ -20,6 +23,8 @@ def main():
 
     print("\nThese are my guitars:")
     for i, guitar in enumerate(guitars):
+        """Iterates through the list of guitars and prints them neatly
+        If the guitar is vintage, appends (vintage) to the end of the line"""
         vintage_string = " (vintage)" if guitar.is_vintage() else ""
         print("Guitar {}: {x.name:>20} ({x.year}), worth ${x.cost:10,.2f}{}".format(i + 1, vintage_string, x=guitar))
 
