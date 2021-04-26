@@ -10,9 +10,9 @@ def main():
     language_list = [ruby, python, visual_basic]  # Input instances into an iterable list
 
     print("The dynamically typed languages are:")
-    for i in language_list:
-        if i.is_dynamic():  # Demonstrates functionality of the is_dynamic() method
-            print(i.name)
+    for language in language_list:
+        if language.is_dynamic():  # Demonstrates functionality of the is_dynamic() method
+            print(language.name)
 
 
 main()
