@@ -1,5 +1,5 @@
 """CP1404 Practical 06 - Jacob Finger 2021 - Guitar class"""
-
+VINTAGE_AGE = 50
 
 class Guitar:
     def __init__(self, name, year, cost):
@@ -19,4 +19,4 @@ class Guitar:
 
     def is_vintage(self):
         """Returns true if the guitar is vintage and thereby over 50 years old"""
-        return self.get_age() >= 50
+        return self.get_age() >= VINTAGE_AGE
