@@ -4,28 +4,28 @@ BoxLayout:
         orientation: 'horizontal'
         TextInput:
             id: input_number
-            text: '15'
+            font_size: 20
+            halign: 'center'
             multiline: False
-            on_text_validate: app.handle_convert(input_number)
-
+            on_text: app.handle_convert(input_number.text)
         BoxLayout:
             orientation: 'vertical'
+            size_hint_x: 0.35
             Button:
                 id: up_button
                 text: 'Up'
-                font_size: 18
+                font_size: 20
                 on_press: app.handle_increment(input_number.text, 1)
             Button:
                 id: down_button
                 text: 'Down'
-                font_size: 18
+                font_size: 20
                 on_press: app.handle_increment(input_number.text, -1)
-
-    Button:
-        id: convert_button
-        text: 'Convert miles to km'
-        font_size: 18
-        on_press: app.handle_convert(input_number.text)
+#    Button:
+#        id: convert_button
+#        text: 'Convert miles to km'
+#        font_size: 18
+#        on_press: app.handle_convert(input_number.text)
     Label:
         id: output_label
         text: app.message
