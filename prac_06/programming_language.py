@@ -19,8 +19,9 @@ class ProgrammingLanguage:
         """Checks if the language is dynamically typed
         :return: True/False
         """
-        if self.typing == "Dynamic":
-            return True
-        else:
-            return False
+        return self.typing.lower() == "dynamic"
+        # if self.typing == "Dynamic":
+        #     return True
+        # else:
+        #     return False
 
