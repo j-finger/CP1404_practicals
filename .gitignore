@@ -1,3 +1,5 @@
 .idea/
 prac_07/KivyDemos-master/
 testing.py
+/prac_07/dynamic_widgets.kv
+/prac_07/dynamic_widgets.py
