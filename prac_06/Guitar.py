@@ -11,7 +11,7 @@ class Guitar:
         self.cost = cost
 
     def __str__(self):
-        return "Guitar: {x.name} made in {x.year} and costs {x.cost}".format(x=self)
+        return "Guitar: {guitar.name} made in {guitar.year} and costs {guitar.cost}".format(guitar=self)
 
     def get_age(self):
         """Get the age of the guitar in the present year (2021)"""

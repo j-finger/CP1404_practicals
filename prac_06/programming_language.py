@@ -13,7 +13,7 @@ class ProgrammingLanguage:
         self.year = year
 
     def __str__(self):
-        return "{x.name}, {x.typing} Typing, Reflection={x.reflection}, First appeared in {x.year}".format(x=self)
+        return "{language.name}, {language.typing} Typing, Reflection={language.reflection}, First appeared in {language.year}".format(language=self)
 
     def is_dynamic(self):
         """Checks if the language is dynamically typed

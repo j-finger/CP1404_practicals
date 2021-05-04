@@ -22,11 +22,11 @@ def main():
         name = input("Name: ")
 
     print("\nThese are my guitars:")
-    for i, guitar in enumerate(guitars):
+    for i, guitar in enumerate(guitars, 1):
         """Iterates through the list of guitars and prints them neatly
         If the guitar is vintage, appends (vintage) to the end of the line"""
         vintage_string = " (vintage)" if guitar.is_vintage() else ""
-        print("Guitar {}: {x.name:>20} ({x.year}), worth ${x.cost:10,.2f}{}".format(i + 1, vintage_string, x=guitar))
+        print("Guitar {}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{}".format(i, vintage_string, guitar=guitar))
 
 
 main()
