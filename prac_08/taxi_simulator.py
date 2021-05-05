@@ -17,20 +17,30 @@ def main():
             user_input = input("Choose taxi: ").lower()
             current_taxi = taxis[int(user_input)]
             print("Bill to date: ${:.2f}".format(bill))
+
         elif user_input == 'd':
-            if not current_taxi:
+            """Drives the current taxi a given distance"""
+            if current_taxi:
                 current_taxi.start_fare()
                 distance_to_drive = int(input("Drive how far? "))
                 current_taxi.drive(distance_to_drive)
                 trip_cost = current_taxi.get_fare()
                 bill += trip_cost
                 print("Your {} trip cost you ${:.2f}".format(current_taxi.name, trip_cost))
+                print("Bill to date: ${:.2f}".format(bill))
+            else:
+                print("You don't have a taxi selected! Please select a valid taxi")
+
         else:
-            print("You don't have a taxi selected! Please select a valid taxi")
+            print("That is not a valid menu choice")
         user_input = input(MENU).lower()
+    print("Total trip cost: ${:.2f}".format(bill))
+    print("Taxis are now:")
+    print_taxi_list(taxis)
 
 
 def print_taxi_list(taxis):
+    """Displays the list of taxis"""
     for i, taxi in enumerate(taxis):
         print("{} - {}".format(i, taxi))
 
