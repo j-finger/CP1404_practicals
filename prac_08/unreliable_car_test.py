@@ -9,6 +9,7 @@ class UnreliableCar(Car):
         self.reliability = reliability
 
     def drive(self, distance):
+        """Drives a given distance if a random integer is above the reliability score"""
         if self.reliability < random.randint(0, 100):
             return super().drive(distance)
         else:
