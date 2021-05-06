@@ -22,7 +22,13 @@ def main():
             """Drives the current taxi a given distance"""
             if current_taxi:
                 current_taxi.start_fare()
-                distance_to_drive = int(input("Drive how far? "))
+                valid_integer = False
+                while not valid_integer:
+                    try:
+                        distance_to_drive = int(input("Drive how far? "))
+                        valid_integer = True
+                    except ValueError:
+                        print("That's not a valid integer!")
                 current_taxi.drive(distance_to_drive)
                 trip_cost = current_taxi.get_fare()
                 bill += trip_cost
