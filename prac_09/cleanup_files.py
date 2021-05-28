@@ -34,6 +34,8 @@ def get_fixed_filename(filename):
     split_word = ""
     split_word.isupper()
     for i, c in enumerate(new_name):
+        if c.isupper() and new_name[i-1].isupper():
+            split_word += '_'
         if c.isupper() and new_name[i-1].islower() and i != 0:
             split_word += '_'
         split_word += c
