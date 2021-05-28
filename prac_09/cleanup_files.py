@@ -25,13 +25,19 @@ def main():
         print("Renaming {} to {}".format(filename, new_name))
 
         # Option 1: rename file to new name - in place
-        os.rename(filename, new_name)
+        # os.rename(filename, new_name)
 
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
     new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    return new_name
+    split_word = ""
+    split_word.isupper()
+    for i, c in enumerate(new_name):
+        if c.isupper() and new_name[i-1].islower() and i != 0:
+            split_word += '_'
+        split_word += c
+    return split_word.title()
 
 
 def demo_walk():
@@ -49,5 +55,5 @@ def demo_walk():
             os.rename(file_and_path, new_name)
 
 
-# main()
-demo_walk()
+main()
+# demo_walk()
