@@ -12,10 +12,18 @@ def main():
     while user_input != 'q':
         if user_input == 'c':
             """Display available taxis for hire and prompt the user to select one"""
-            print("Taxis available:")
-            print_taxi_list(taxis)
-            user_input = input("Choose taxi: ").lower()
-            current_taxi = taxis[int(user_input)]
+            valid_index = False
+            while not valid_index:
+                try:
+                    print("Taxis available:")
+                    print_taxi_list(taxis)
+                    user_input = input("Choose taxi: ").lower()
+                    current_taxi = taxis[int(user_input) - 1]
+                    valid_index = True
+                except IndexError:
+                    print("That taxi does not exist!")
+                except ValueError:
+                    print("That's not a valid integer!")
             print("Bill to date: ${:.2f}".format(bill))
 
         elif user_input == 'd':
@@ -47,7 +55,7 @@ def main():
 
 def print_taxi_list(taxis):
     """Displays the list of taxis"""
-    for i, taxi in enumerate(taxis):
+    for i, taxi in enumerate(taxis, 1):
         print("{} - {}".format(i, taxi))
 
 
