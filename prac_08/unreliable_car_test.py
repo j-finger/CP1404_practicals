@@ -1,16 +1,18 @@
-from prac_08.car import Car
-import random
+""" CP1404 - Practical 08 - Unreliable Car testing - Jacob Finger """
+from prac_08.unreliable_car import UnreliableCar
 
 
-class UnreliableCar(Car):
-    def __init__(self, name, fuel, reliability):
-        """Initialise a UnreliableCar instance based on the Car class"""
-        super().__init__(name, fuel)
-        self.reliability = reliability
+def main():
+    """Test the unreliable car class under a variety of conditions"""
 
-    def drive(self, distance):
-        """Drives a given distance if a random integer is above the reliability score"""
-        if self.reliability < random.randint(0, 100):
-            return super().drive(distance)
-        else:
-            return 0
+    nissan_xtrail = UnreliableCar("Old mate's Nissan", 20, 90)
+    n70_hilux = UnreliableCar("gOoD hoRse", 8000, 1)
+    daily_commute = 23
+    for daily_trip in range(21):
+        nissan_xtrail.drive(daily_commute)
+        n70_hilux.drive(daily_commute)
+        print("{}. {}".format(daily_trip, nissan_xtrail))
+        print("{}. {}".format(daily_trip, n70_hilux))
+
+
+main()
