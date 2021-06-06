@@ -1,9 +1,8 @@
 .idea/
 prac_07/KivyDemos-master/
-testing.py
-/prac_07/dynamic_widgets.kv
-/prac_07/dynamic_widgets.py
-/prac_09/FilesToSort/
-/prac_09/Lyrics/
-/prac_09/Lyrics - Copy/
-/prac_09/FilesToSortbak/
+prac_07/dynamic_widgets.kv
+prac_07/dynamic_widgets.py
+prac_09/FilesToSort/
+prac_09/Lyrics/
+prac_09/Lyrics - Copy/
+prac_09/FilesToSortbak/
